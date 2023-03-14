@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="1000">
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/image" />
+
+
+        <!--            KeyFrameSet标签：用来指定某个中间状态的位置和属性。其实和过渡动画的关键帧是一样的概念。-->
+        <!--        <KeyFrameSet>-->
+        <!--            &lt;!&ndash;                位置关键帧&ndash;&gt;-->
+        <!--            <KeyPosition-->
+        <!--                motion:framePosition="50"-->
+        <!--                motion:keyPositionType="parentRelative"-->
+        <!--                motion:motionTarget="@id/image"-->
+        <!--                motion:percentX="0.25"-->
+        <!--                motion:percentY="0.5" />-->
+
+        <!--        </KeyFrameSet>-->
+
+        <KeyFrameSet>
+            <KeyPosition
+                motion:framePosition="50"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@id/image"
+                motion:percentX="0.268"
+                motion:percentY="-0.161" />
+            <KeyPosition
+                motion:framePosition="70"
+                motion:keyPositionType="pathRelative"
+                motion:motionTarget="@+id/image"
+                motion:percentX="0.553"
+                motion:percentY="0.171" />
+        </KeyFrameSet>
+
+    </Transition>
+
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:alpha="0.2"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintHorizontal_bias="0.011"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent">
+            <CustomAttribute
+                motion:attributeName="backgroundColor"
+                motion:customColorValue="#D81B60" />
+        </Constraint>
+    </ConstraintSet>
+
+<!--    <ConstraintSet android:id="@+id/end">-->
+<!--        <Constraint-->
+<!--            android:id="@id/image"-->
+<!--            android:layout_width="64dp"-->
+<!--            android:layout_height="64dp"-->
+<!--            android:alpha="1"-->
+<!--            android:scaleX="1.5"-->
+<!--            android:scaleY="1.5"-->
+<!--            motion:layout_constraintBottom_toBottomOf="parent"-->
+<!--            motion:layout_constraintEnd_toEndOf="parent"-->
+<!--            motion:layout_constraintStart_toStartOf="parent"-->
+<!--            motion:transitionEasing="linear">-->
+<!--            <CustomAttribute-->
+<!--                motion:attributeName="backgroundColor"-->
+<!--                motion:customColorValue="#9999FF" />-->
+<!--        </Constraint>-->
+<!--    </ConstraintSet>-->
+
+
+</MotionScene>
